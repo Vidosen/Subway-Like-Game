@@ -12,7 +12,7 @@ public class MobileInputSystem : MonoBehaviour, IDragHandler, IBeginDragHandler,
         public event Action OnSwipeLeftOccured;
         public event Action OnSwipeRightOccured;
         
-        //[Inject]
+        [Inject]
         private Settings _settings;
 
         private int pointerId = int.MinValue;
