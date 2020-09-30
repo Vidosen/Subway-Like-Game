@@ -7,7 +7,12 @@
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="330d789a-af4d-4eb8-b0b4-088e91bb828c" name="Default Changelist" comment="" />
@@ -19,11 +24,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Coin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/MobileInputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SettingsInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RoadBlock.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockManager.cs" />
       </list>
     </option>
@@ -34,9 +49,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -49,10 +72,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15432">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="15432" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -68,6 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1601401830071</updated>
       <workItem from="1601401841502" duration="1232000" />
+      <workItem from="1601447686017" duration="12232000" />
+      <workItem from="1601467574480" duration="11466000" />
     </task>
     <servers />
   </component>
@@ -86,8 +111,79 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1601481515466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515466" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.center/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.left/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.right/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.center/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.left/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1601481515467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.right/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601481515467" />
+    <state x="794" y="221" key="RiderGenerateDialog" timestamp="1601477408724">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="221" key="RiderGenerateDialog/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601477408724" />
   </component>
 </project>

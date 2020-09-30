@@ -16,8 +16,11 @@ public class Player : MonoBehaviour
     private CinemachineVirtualCamera _playingCamera;
     [Inject(Id = "Awaiting")]
     private CinemachineVirtualCamera _awaitingCamera;
-
     private Rigidbody _rigidbody;
+
+    public Vector3 Position => transform.position;
+    
+    
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
         ChangeState();
     }
 
+    public float Speed = 5f;
 
     private bool _isPlaying;
     private Vector3 _startPos;
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour
 
         if (_isPlaying)
         {
-            transform.Translate( Vector3.forward * (5f * Time.deltaTime));
+            transform.Translate( Vector3.forward * (Speed * Time.deltaTime));
         }
 
     }
