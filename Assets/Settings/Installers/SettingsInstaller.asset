@@ -19,6 +19,7 @@ MonoBehaviour:
     jumpHeight: 2.5
     stunSpan: 4
   RoadBlockManagerSettings:
-    StartWithPos: {x: 0, y: 0, z: 15}
-    BlockDepth: 3
-    FartherFromPlayer: 45
+    startWithPos: {x: 0, y: 0, z: 15}
+    blockDepth: 3
+    fartherFromPlayerForward: 50
+    fartherFromPlayerBehind: 10

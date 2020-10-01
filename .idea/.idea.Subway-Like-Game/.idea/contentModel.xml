@@ -626,10 +626,12 @@
           <e p="Coin.cs" t="Include" />
           <e p="Installers" t="Include">
             <e p="GameInstaller.cs" t="Include" />
+            <e p="ObstacleInstaller.cs" t="Include" />
             <e p="SettingsInstaller.cs" t="Include" />
           </e>
           <e p="MobileInputSystem.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
+          <e p="ObstacleManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="RoadBlock.cs" t="Include" />
         </e>

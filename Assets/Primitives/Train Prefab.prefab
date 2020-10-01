@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a843b6b1eccf6ac4b89f073ae3858ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinSpawn: {fileID: 2004630443158380084}
-  ObstacleType: 0
+  coinSpawn: {fileID: 2004630443158380084}
+  obstacleType: 0
 --- !u!1 &3864371813580317192
 GameObject:
   m_ObjectHideFlags: 0

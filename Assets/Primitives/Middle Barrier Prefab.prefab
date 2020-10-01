@@ -260,5 +260,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a843b6b1eccf6ac4b89f073ae3858ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinSpawn: {fileID: 2682526999552524890}
-  ObstacleType: 3
+  coinSpawn: {fileID: 2682526999552524890}
+  obstacleType: 0

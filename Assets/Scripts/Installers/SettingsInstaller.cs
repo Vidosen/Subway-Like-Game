@@ -13,4 +13,6 @@ public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
         Container.BindInstance(PlayerSettings);
         Container.BindInstance(RoadBlockManagerSettings);
     }
+    
+    
 }

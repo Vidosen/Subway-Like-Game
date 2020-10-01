@@ -12,18 +12,16 @@ public class RoadBlock : MonoBehaviour
     public Lane leftLane;
     public Lane middleLane;
     public Lane rightLane;
-
+    
     [Inject]
     public void Construct()
     {
-        Reset(transform.position, null, null, null);
+        Reset(transform.position);
     }
 
-    private void Reset(Vector3 pos, Obstacle leftObstacle, Obstacle middleObstacle, Obstacle rightObstacle)
+    private void Reset(Vector3 pos)
     {
-        leftLane.Reset(leftObstacle);
-        middleLane.Reset(middleObstacle);
-        rightLane.Reset(rightObstacle);
+
         transform.position = pos;
     }
 
@@ -35,11 +33,11 @@ public class RoadBlock : MonoBehaviour
         }
     }
 
-    public class Pool : MonoMemoryPool<Vector3, Obstacle,Obstacle,Obstacle,RoadBlock>
+    public class Pool : MonoMemoryPool<Vector3, RoadBlock>
     {
-        protected override void Reinitialize(Vector3 pos, Obstacle leftObstacle, Obstacle middleObstacle, Obstacle rightObstacle, RoadBlock block)
+        protected override void Reinitialize(Vector3 pos, RoadBlock block)
         {
-            block.Reset(pos, leftObstacle, middleObstacle, rightObstacle);
+            block.Reset(pos);
         }
     }
 }
@@ -47,17 +45,6 @@ public class RoadBlock : MonoBehaviour
 [Serializable]
 public class Lane
 {
-    
-    public void Reset(Obstacle obstacle)
-    {
-        Obstacle = obstacle;
-        if (Obstacle != null)
-        {
-            Transform transform;
-            (transform = Obstacle.transform).SetParent(laneTransform);
-            transform.localPosition = Vector3.zero;
-        }
-    }
 
     public class LaneParams
     {
