@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 using Zenject;
 using Random = UnityEngine.Random;
 
-public class BlockManager : IInitializable, ITickable
+public class BlockManager : ITickable
 {
      
      List<RoadBlock> _activeBlocks = new List<RoadBlock>();
@@ -16,20 +16,33 @@ public class BlockManager : IInitializable, ITickable
      [Inject] private RoadBlock.Pool _blockPool;
      [Inject] private Player _player;               //Через mono компонент ZenjectBinding
 
-
-     public void Initialize()
-     {
-          SpawnBlocksInFrontOfPlayer(_settings.startWithPos);
-     }
-
+     public bool IsActive { get; set; } = false;
+     
+     
      public void Tick()
      {
-          if (_activeBlocks.Count > 0)
+          if (IsActive)
           {
                DespawnBlocksBehindPlayer();
-               SpawnBlocksInFrontOfPlayer(_activeBlocks.Last().transform.position +
-                                          Vector3.forward * _settings.blockDepth);
+               Vector3 nextBlockPos;
+               if (_activeBlocks.Count > 0)
+                    nextBlockPos = _activeBlocks.Last().transform.position + Vector3.forward * _settings.blockDepth;
+               else
+                    nextBlockPos = _settings.startWithPos;
+
+               SpawnBlocksInFrontOfPlayer(nextBlockPos);
           }
+     }
+     
+
+     public void ClearBlocks()
+     {
+          foreach (var block in _activeBlocks)
+          {
+               DespawnObstacles(block);
+               _blockPool.Despawn(block);
+          }
+          _activeBlocks.Clear();
      }
 
      void DespawnBlocksBehindPlayer()
@@ -38,14 +51,19 @@ public class BlockManager : IInitializable, ITickable
                     _player.Position.z - _settings.fartherFromPlayerBehind)
                {
                     //Возврщаем препятсвтия
-                    _obstacleManager.ReturnObstacle(_activeBlocks[0].leftLane.Obstacle);
-                    _obstacleManager.ReturnObstacle(_activeBlocks[0].middleLane.Obstacle);
-                    _obstacleManager.ReturnObstacle(_activeBlocks[0].rightLane.Obstacle);
+                    DespawnObstacles(_activeBlocks[0]);
                     //Возвращаем блок
                     _blockPool.Despawn(_activeBlocks[0]);
                     _activeBlocks.RemoveAt(0);
                }
 
+     }
+
+     void DespawnObstacles(RoadBlock block)
+     {
+          _obstacleManager.ReturnObstacle(block.leftLane.Obstacle);
+          _obstacleManager.ReturnObstacle(block.middleLane.Obstacle);
+          _obstacleManager.ReturnObstacle(block.rightLane.Obstacle);
      }
 
      void SpawnBlocksInFrontOfPlayer(Vector3 startPos)

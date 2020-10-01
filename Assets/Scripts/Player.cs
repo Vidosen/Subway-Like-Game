@@ -7,8 +7,8 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-    [Inject]
-    private MobileInputSystem _inputSystem;
+    [Inject] private MobileInputSystem _inputSystem;
+    [Inject] private BlockManager _blockManager;
     //[Inject]
     private Settings _settings;
 
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _isPlaying = !_isPlaying;
+            _blockManager.IsActive = !_blockManager.IsActive; //TODO: Убрать тестовую логику
             ChangeState();
         }
 
@@ -60,8 +61,9 @@ public class Player : MonoBehaviour
         }
         else
         {
+            _blockManager.ClearBlocks(); //TODO: Убрать тестовую логику
+            
             _rigidbody.velocity = Vector3.zero;
-
             transform.position = _startPos;
             
             _playingCamera.Priority = 0;

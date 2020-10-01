@@ -34,14 +34,14 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/MobileInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Coin.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SettingsInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObstacleManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ObstacleInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RoadBlock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" />
       </list>
     </option>
   </component>
@@ -74,10 +74,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17556">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17556" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -96,6 +96,7 @@
       <workItem from="1601447686017" duration="12232000" />
       <workItem from="1601467574480" duration="11677000" />
       <workItem from="1601530359395" duration="4996000" />
+      <workItem from="1601566015695" duration="4597000" />
     </task>
     <servers />
   </component>
@@ -188,24 +189,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="221" key="RiderGenerateDialog/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1601477408724" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BlockManager.cs</url>
-          <line>52</line>
-          <properties documentPath="E:\projects\GitHub\Subway-Like-Game\Assets\Scripts\BlockManager.cs" initialLine="52">
-            <startOffsets>
-              <option value="1734" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1753" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
