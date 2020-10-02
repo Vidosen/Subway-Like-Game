@@ -261,4 +261,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSpawn: {fileID: 2682526999552524890}
-  obstacleType: 0
+  obstacleType: 3

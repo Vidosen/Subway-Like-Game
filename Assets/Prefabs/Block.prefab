@@ -1398,12 +1398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce336f6144c3104e978354e1326539f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftLane:
-    laneTransform: {fileID: 2718610444105063156}
-  middleLane:
-    laneTransform: {fileID: 2718610444725750039}
-  rightLane:
-    laneTransform: {fileID: 2718610444509550482}
+  lanes:
+  - laneTransform: {fileID: 2718610444105063156}
+    Obstacle: {fileID: 0}
+  - laneTransform: {fileID: 2718610444725750039}
+    Obstacle: {fileID: 0}
+  - laneTransform: {fileID: 2718610444509550482}
+    Obstacle: {fileID: 0}
 --- !u!1 &6584203798061427733
 GameObject:
   m_ObjectHideFlags: 0

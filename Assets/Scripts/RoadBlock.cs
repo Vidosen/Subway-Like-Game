@@ -5,14 +5,17 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
-using Random = UnityEngine.Random;
 
 public class RoadBlock : MonoBehaviour
 {
-    public Lane leftLane;
-    public Lane middleLane;
-    public Lane rightLane;
-    
+
+    [SerializeField] private Lane[] lanes;
+    public Lane LeftLane => lanes[0];
+    public Lane MiddleLane => lanes[1];
+    public Lane RightLane => lanes[2];
+
+    public Lane this[int key] => lanes[key];
+
     [Inject]
     public void Construct()
     {
@@ -25,13 +28,6 @@ public class RoadBlock : MonoBehaviour
         transform.position = pos;
     }
 
-    private void GenerateLanesBasedOn(IEnumerable<RoadBlock> prevBlocks)
-    {
-        if (prevBlocks != null)
-        {
-            
-        }
-    }
 
     public class Pool : MonoMemoryPool<Vector3, RoadBlock>
     {
@@ -45,13 +41,7 @@ public class RoadBlock : MonoBehaviour
 [Serializable]
 public class Lane
 {
-
-    public class LaneParams
-    {
-        public IEnumerable<Lane> prevLanes;
-        public Lane neighbor1;
-        public Lane neighbor2;
-    }
+    
     public Transform laneTransform;
     public Obstacle Obstacle;
 }

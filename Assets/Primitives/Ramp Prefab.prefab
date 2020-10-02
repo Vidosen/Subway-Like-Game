@@ -410,5 +410,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a843b6b1eccf6ac4b89f073ae3858ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinSpawn: {fileID: 0}
-  ObstacleType: 1
+  coinSpawn: {fileID: 0}
+  obstacleType: 1

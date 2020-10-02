@@ -8,7 +8,6 @@ using Random = UnityEngine.Random;
 
 public class BlockManager : ITickable
 {
-     
      List<RoadBlock> _activeBlocks = new List<RoadBlock>();
      
      [Inject] private Settings _settings;
@@ -17,7 +16,6 @@ public class BlockManager : ITickable
      [Inject] private Player _player;               //Через mono компонент ZenjectBinding
 
      public bool IsActive { get; set; } = false;
-     
      
      public void Tick()
      {
@@ -32,8 +30,8 @@ public class BlockManager : ITickable
 
                SpawnBlocksInFrontOfPlayer(nextBlockPos);
           }
+          
      }
-     
 
      public void ClearBlocks()
      {
@@ -45,43 +43,63 @@ public class BlockManager : ITickable
           _activeBlocks.Clear();
      }
 
-     void DespawnBlocksBehindPlayer()
+     private void DespawnBlocksBehindPlayer()
      {
           while (_activeBlocks.Count > 0 && _activeBlocks[0].transform.position.z <
                     _player.Position.z - _settings.fartherFromPlayerBehind)
                {
-                    //Возврщаем препятсвтия
+                    //Возврщаем препятствия
                     DespawnObstacles(_activeBlocks[0]);
                     //Возвращаем блок
                     _blockPool.Despawn(_activeBlocks[0]);
                     _activeBlocks.RemoveAt(0);
                }
-
      }
 
-     void DespawnObstacles(RoadBlock block)
+     private void DespawnObstacles(RoadBlock block)
      {
-          _obstacleManager.ReturnObstacle(block.leftLane.Obstacle);
-          _obstacleManager.ReturnObstacle(block.middleLane.Obstacle);
-          _obstacleManager.ReturnObstacle(block.rightLane.Obstacle);
+          _obstacleManager.ReturnObstacle(block.LeftLane.Obstacle);
+          _obstacleManager.ReturnObstacle(block.MiddleLane.Obstacle);
+          _obstacleManager.ReturnObstacle(block.RightLane.Obstacle);
      }
 
-     void SpawnBlocksInFrontOfPlayer(Vector3 startPos)
+     private void SpawnBlocksInFrontOfPlayer(Vector3 startPos)
      {
           var pos = startPos;
           while ( pos.z < _player.Position.z + _settings.fartherFromPlayerForward)
           {
                var block = _blockPool.Spawn(pos);
-               block.leftLane.Obstacle =
-                    _obstacleManager.GetObstacle((Obstacle.ObstacleType)Random.Range(0, (int)Obstacle.ObstacleType.Count), block.leftLane.laneTransform);
-               block.middleLane.Obstacle =
-                    _obstacleManager.GetObstacle(Obstacle.ObstacleType.None, block.middleLane.laneTransform);
-               block.rightLane.Obstacle =
-                    _obstacleManager.GetObstacle((Obstacle.ObstacleType)Random.Range(0, (int)Obstacle.ObstacleType.Count), block.rightLane.laneTransform);
-               
+               Obstacle.ObstacleType prevObstacle;
+               for (int i = 0, streak; i < 3; i++)
+               {
+                    TryGetLaneLastObstacles(i, out prevObstacle, out streak);
+                    
+                    block[i].Obstacle =
+                         _obstacleManager.ChooseAndGetObstacle(prevObstacle, streak, block[i].laneTransform);
+               }
                _activeBlocks.Add(block);
                pos += Vector3.forward * _settings.blockDepth;
           }
+     }
+     
+
+     private void TryGetLaneLastObstacles(int lane, out Obstacle.ObstacleType oType, out int streak)
+     {
+          streak = 1;
+          if (_activeBlocks.Count > 0)
+          {
+               var laneObstacles = _activeBlocks.Select(b => b[lane].Obstacle.obstacleType).Reverse().ToArray();
+               oType = laneObstacles.First();
+               foreach (var obstacle in laneObstacles.Skip(1))
+               {
+                    if (obstacle == oType)
+                         streak++;
+                    else
+                         break;
+               }
+          }
+          else
+               oType = Obstacle.ObstacleType.None;
      }
      
      [Serializable]

@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSpawn: {fileID: 5586260570761063051}
-  obstacleType: 0
+  obstacleType: 4
 --- !u!1 &6070744522548931135
 GameObject:
   m_ObjectHideFlags: 0
