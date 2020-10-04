@@ -5,7 +5,7 @@ using Zenject;
 public class SettingsInstaller : ScriptableObjectInstaller<SettingsInstaller>
 {
     public MobileInputSystem.Settings InputSettings;
-    public Player.Settings PlayerSettings;
+    public PlayerMovement.Settings PlayerSettings;
     public BlockManager.Settings RoadBlockManagerSettings;
     public ObstacleManager.Settings ObstacleManagerSettings;
 

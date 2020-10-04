@@ -18,6 +18,8 @@ namespace DefaultNamespace
             _signalBus.Subscribe<PlayerDiedSignal>(OnPlayerDied);
             _signalBus.Subscribe<StartedAwaitingSignal>(OnPlayerAlive);
             _signalBus.Subscribe<StartedGameSignal>(OnPlayerAlive);
+            _signalBus.Subscribe<PlayerHitBorderSignal>(OnPlayerHitBarrier);
+            _signalBus.Subscribe<StunExpiredSignal>(OnPlayerAlive);
            // _signalBus.Subscribe<CollectedCoinSignal>();
         }
 

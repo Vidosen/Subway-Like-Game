@@ -16,11 +16,13 @@ namespace Installers
             
             Container.DeclareSignal<PlayerHitBorderSignal>();
             Container.DeclareSignal<PlayerDiedSignal>();
-            Container.DeclareSignal<CollectedCoinSignal>();
+            Container.DeclareSignal<PickedUpCollectableSignal>();
             Container.DeclareSignal<StartedGameSignal>();
             Container.DeclareSignal<StartedAwaitingSignal>();
-
-
+            Container.DeclareSignal<StunExpiredSignal>();
+            
+            Container.BindInterfacesAndSelfTo<GameController>().AsSingle();
+            Container.Bind<IGameDataHandler>().To<PlayerPrefsGameDataHandler>().AsSingle();
             
             Container.Bind<UIController>().FromComponentInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraController>().AsSingle();

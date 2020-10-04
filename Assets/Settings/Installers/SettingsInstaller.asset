@@ -15,15 +15,15 @@ MonoBehaviour:
   InputSettings:
     thresholdMagnitude: 4
   PlayerSettings:
-    playerStartSpeed: 6
+    playerStartSpeed: 8
     jumpHeight: 2.5
     stunSpan: 4
+    lanesXStep: 2.5
   RoadBlockManagerSettings:
     startWithPos: {x: 0, y: 0, z: 15}
     blockDepth: 3
     fartherFromPlayerForward: 50
     fartherFromPlayerBehind: 10
-    lanesXStep: 2.5
   ObstacleManagerSettings:
     rampBaseChance: 0.05
     trainBaseChance: 0.02

@@ -677,11 +677,13 @@
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="Coin.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
           <e p="Generation" t="Include">
             <e p="BlockManager.cs" t="Include" />
             <e p="ObstacleManager.cs" t="Include" />
             <e p="RoadBlock.cs" t="Include" />
           </e>
+          <e p="IGameDataHandler.cs" t="Include" />
           <e p="Input" t="Include">
             <e p="MobileInputSystem.cs" t="Include" />
           </e>
@@ -691,14 +693,17 @@
             <e p="SettingsInstaller.cs" t="Include" />
           </e>
           <e p="Obstacle.cs" t="Include" />
-          <e p="Player.cs" t="Include" />
           <e p="PlayerAnimation.cs" t="Include" />
+          <e p="PlayerMovement.cs" t="Include" />
+          <e p="PlayerPrefsGameDataHandler.cs" t="Include" />
           <e p="Signals" t="Include">
-            <e p="CollectedCoinSignal.cs" t="Include" />
+            <e p="PickedUpCollectableSignal.cs" t="Include" />
             <e p="PlayerDiedSignal.cs" t="Include" />
             <e p="PlayerHitBorderSignal.cs" t="Include" />
+            <e p="PlayerStartedSignal.cs" t="Include" />
             <e p="StartedAwaitingSignal.cs" t="Include" />
             <e p="StartedGameSignal.cs" t="Include" />
+            <e p="StunExpiredSignal.cs" t="Include" />
           </e>
           <e p="UIController.cs" t="Include" />
         </e>

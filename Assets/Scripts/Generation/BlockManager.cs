@@ -14,7 +14,7 @@ public class BlockManager : ITickable, IInitializable, IDisposable
      [Inject] private Settings _settings;
      [Inject] private ObstacleManager _obstacleManager;
      [Inject] private RoadBlock.Pool _blockPool;
-     [Inject] private Player _player;               //Через mono компонент ZenjectBinding
+     [Inject] private PlayerMovement _player;               //Через mono компонент ZenjectBinding
 
      public bool IsActive { get; set; } = false;
      
@@ -110,8 +110,7 @@ public class BlockManager : ITickable, IInitializable, IDisposable
           public float blockDepth;
           public float fartherFromPlayerForward;
           public float fartherFromPlayerBehind;
-          public float lanesXStep;
-          
+
      }
 
      private void OnStartedAwaiting()

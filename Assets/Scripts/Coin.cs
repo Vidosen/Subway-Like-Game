@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Signals;
 using UnityEngine;
 using Zenject;
 
 public class Coin : MonoBehaviour
 {
     //Для возвращения монеты в пул при сборе
-    private Pool _coinPool;
-
+    [Inject] private readonly Pool _coinPool;
+    [Inject] private readonly SignalBus _signalBus;
     [SerializeField] private Transform modelTransform;
-
-    [Inject]
-    public void Construct(Pool coinPool)
-    {
-        _coinPool = coinPool;
-        Reset(Vector3.zero);
-    }
     private void Reset(Vector3 pos)
     {
         transform.position = pos;
@@ -30,7 +24,11 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        throw new NotImplementedException();
+        if (other.CompareTag("Player"))
+        {
+            _signalBus.Fire<PickedUpCollectableSignal>();
+            _coinPool.Despawn(this);
+        }
     }
 
     public class Pool : MonoMemoryPool<Vector3, Coin>
