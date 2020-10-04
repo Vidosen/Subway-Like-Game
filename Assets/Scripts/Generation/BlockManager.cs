@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Signals;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
 using Random = UnityEngine.Random;
 
-public class BlockManager : ITickable
+public class BlockManager : ITickable, IInitializable, IDisposable
 {
      List<RoadBlock> _activeBlocks = new List<RoadBlock>();
-     
+     [Inject] private readonly SignalBus _signalBus;
      [Inject] private Settings _settings;
      [Inject] private ObstacleManager _obstacleManager;
      [Inject] private RoadBlock.Pool _blockPool;
@@ -105,10 +106,31 @@ public class BlockManager : ITickable
      [Serializable]
      public class Settings
      {
-           public Vector3 startWithPos;
+          public Vector3 startWithPos;
           public float blockDepth;
           public float fartherFromPlayerForward;
           public float fartherFromPlayerBehind;
+          public float lanesXStep;
           
+     }
+
+     private void OnStartedAwaiting()
+     {
+          IsActive = false;
+     }
+     private void OnStartedGame()
+     {
+          ClearBlocks();
+          IsActive = true;
+     }
+     public void Initialize()
+     {
+          _signalBus.Subscribe<StartedAwaitingSignal>(OnStartedAwaiting);
+          _signalBus.Subscribe<StartedGameSignal>(OnStartedGame);
+     }
+     public void Dispose()
+     {
+          _signalBus.Unsubscribe<StartedAwaitingSignal>(OnStartedAwaiting);
+          _signalBus.Unsubscribe<StartedGameSignal>(OnStartedGame);
      }
 }

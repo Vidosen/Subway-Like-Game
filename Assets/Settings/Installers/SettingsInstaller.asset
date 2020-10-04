@@ -15,7 +15,7 @@ MonoBehaviour:
   InputSettings:
     thresholdMagnitude: 4
   PlayerSettings:
-    playerSpeed: 5
+    playerStartSpeed: 6
     jumpHeight: 2.5
     stunSpan: 4
   RoadBlockManagerSettings:
@@ -23,3 +23,10 @@ MonoBehaviour:
     blockDepth: 3
     fartherFromPlayerForward: 50
     fartherFromPlayerBehind: 10
+    lanesXStep: 2.5
+  ObstacleManagerSettings:
+    rampBaseChance: 0.05
+    trainBaseChance: 0.02
+    trainMaxChance: 0.75
+    barrierBaseChance: 0.13
+    noneMaxChance: 0.9

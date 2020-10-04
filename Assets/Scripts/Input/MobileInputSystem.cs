@@ -17,6 +17,7 @@ public class MobileInputSystem : MonoBehaviour, IDragHandler, IBeginDragHandler,
 
         private int pointerId = int.MinValue;
         private Vector2 _startPos;
+        
 
 #if UNITY_EDITOR
         private void Update()

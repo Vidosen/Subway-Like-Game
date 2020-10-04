@@ -271,6 +271,59 @@
           </e>
           <e p="Zenject" t="Include">
             <e p="LICENSE.txt" t="Include" />
+            <e p="OptionalExtras" t="Include">
+              <e p="MemoryPoolMonitor" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="DebugWindow" t="Include">
+                    <e p="InPlaceStableSort.cs" t="Include" />
+                    <e p="MpmView.cs" t="Include" />
+                    <e p="MpmWindow.cs" t="Include" />
+                  </e>
+                  <e p="MpmSettingsInstaller.cs" t="Include" />
+                  <e p="Zenject-PoolMonitor-Editor.asmdef" t="Include" />
+                </e>
+              </e>
+              <e p="Signals" t="Include">
+                <e p="Internal" t="Include">
+                  <e p="Binders" t="Include">
+                    <e p="BindSignal" t="Include">
+                      <e p="BindSignalFromBinder.cs" t="Include" />
+                      <e p="BindSignalIdToBinder.cs" t="Include" />
+                      <e p="BindSignalToBinder.cs" t="Include" />
+                      <e p="SignalCallbackWithLookupWrapper.cs" t="Include" />
+                      <e p="SignalCallbackWrapper.cs" t="Include" />
+                    </e>
+                    <e p="DeclareSignal" t="Include">
+                      <e p="DeclareSignalAsyncTickPriorityCopyBinder.cs" t="Include" />
+                      <e p="DeclareSignalIdRequireHandlerAsyncTickPriorityCopyBinder.cs" t="Include" />
+                      <e p="DeclareSignalRequireHandlerAsyncTickPriorityCopyBinder.cs" t="Include" />
+                      <e p="SignalBindingBindInfo.cs" t="Include" />
+                      <e p="SignalDeclarationBindInfo.cs" t="Include" />
+                    </e>
+                    <e p="SignalCopyBinder.cs" t="Include" />
+                    <e p="SignalExtensions.cs" t="Include" />
+                    <e p="SignalTickPriorityCopyBinder.cs" t="Include" />
+                  </e>
+                  <e p="SignalDeclaration.cs" t="Include" />
+                  <e p="SignalSubscription.cs" t="Include" />
+                  <e p="SignalSubscriptionId.cs" t="Include" />
+                </e>
+                <e p="Main" t="Include">
+                  <e p="SignalBus.cs" t="Include" />
+                  <e p="SignalBusInstaller.cs" t="Include" />
+                  <e p="SignalDeclarationAsyncInitializer.cs" t="Include" />
+                </e>
+              </e>
+              <e p="TestFramework" t="Include">
+                <e p="SceneTestFixture.cs" t="Include" />
+                <e p="SceneTestFixtureSceneReference.cs" t="Include" />
+                <e p="ValidateOnlyAttribute.cs" t="Include" />
+                <e p="Zenject-TestFramework.asmdef" t="Include" />
+                <e p="ZenjectIntegrationTestFixture.cs" t="Include" />
+                <e p="ZenjectTestUtil.cs" t="Include" />
+                <e p="ZenjectUnitTestFixture.cs" t="Include" />
+              </e>
+            </e>
             <e p="Source" t="Include">
               <e p="Binding" t="Include">
                 <e p="Binders" t="Include">
@@ -622,18 +675,32 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BlockManager.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
           <e p="Coin.cs" t="Include" />
+          <e p="Generation" t="Include">
+            <e p="BlockManager.cs" t="Include" />
+            <e p="ObstacleManager.cs" t="Include" />
+            <e p="RoadBlock.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="MobileInputSystem.cs" t="Include" />
+          </e>
           <e p="Installers" t="Include">
             <e p="GameInstaller.cs" t="Include" />
             <e p="ObstacleInstaller.cs" t="Include" />
             <e p="SettingsInstaller.cs" t="Include" />
           </e>
-          <e p="MobileInputSystem.cs" t="Include" />
           <e p="Obstacle.cs" t="Include" />
-          <e p="ObstacleManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
-          <e p="RoadBlock.cs" t="Include" />
+          <e p="PlayerAnimation.cs" t="Include" />
+          <e p="Signals" t="Include">
+            <e p="CollectedCoinSignal.cs" t="Include" />
+            <e p="PlayerDiedSignal.cs" t="Include" />
+            <e p="PlayerHitBorderSignal.cs" t="Include" />
+            <e p="StartedAwaitingSignal.cs" t="Include" />
+            <e p="StartedGameSignal.cs" t="Include" />
+          </e>
+          <e p="UIController.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
@@ -673,6 +740,8 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="UniRx.csproj" t="IncludeRecursive" />
       <e p="Zenject-Editor.csproj" t="IncludeRecursive" />
+      <e p="Zenject-PoolMonitor-Editor.csproj" t="IncludeRecursive" />
+      <e p="Zenject-TestFramework.csproj" t="IncludeRecursive" />
       <e p="Zenject.csproj" t="IncludeRecursive" />
     </e>
   </component>
