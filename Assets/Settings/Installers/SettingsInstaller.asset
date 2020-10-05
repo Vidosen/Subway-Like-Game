@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SettingsInstaller
   m_EditorClassIdentifier: 
   InputSettings:
-    thresholdMagnitude: 4
+    thresholdMagnitude: 5
   PlayerSettings:
     playerStartSpeed: 8
     jumpHeight: 2.5

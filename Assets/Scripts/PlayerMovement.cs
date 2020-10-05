@@ -133,7 +133,6 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.position = Vector3.Lerp(currentPos,targetPos, Time.fixedDeltaTime * 5f);
             if (Mathf.Abs(_rigidbody.position.x - targetPos.x) < 0.03f)
             {
-                Debug.Log("It's OK");
                 _currentLane = _targetLane;
             }
         }
